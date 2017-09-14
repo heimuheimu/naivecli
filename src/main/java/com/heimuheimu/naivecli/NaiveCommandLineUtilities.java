@@ -36,7 +36,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
-import java.util.List;
+import java.util.Collection;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -82,7 +82,7 @@ public class NaiveCommandLineUtilities implements Closeable {
      * @param maxSessions 命令行工具允许同时存在的最大 {@link NaiveCliSession} 数量
      * @param maxIdleSeconds  NaiveCliSession 允许的最大闲置秒数，超过该时间的 NaiveCliSession 将会被自动关闭，如果小于等于 0，则不进行自动关闭
      */
-    public NaiveCommandLineUtilities(int port, List<NaiveCommand> commandList, int maxSessions, int maxIdleSeconds) {
+    public NaiveCommandLineUtilities(int port, Collection<NaiveCommand> commandList, int maxSessions, int maxIdleSeconds) {
         this.port = port;
         this.naiveCommandExecutor = new NaiveCommandExecutor(commandList);
         this.maxSessions = maxSessions;

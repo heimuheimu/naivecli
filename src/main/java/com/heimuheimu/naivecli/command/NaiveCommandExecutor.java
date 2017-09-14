@@ -46,7 +46,7 @@ public class NaiveCommandExecutor {
     public NaiveCommandExecutor(Collection<NaiveCommand> commandList) {
         commandMap = new HashMap<>();
         for (NaiveCommand command : commandList) {
-            String commandName = command.getName();
+            String commandName = command.getName().toLowerCase();
             NaiveCommand existedCommand = commandMap.get(commandName);
             if (existedCommand != null && existedCommand != command) {
                 LOGGER.error("Duplicate command: `" + commandName + "`. Existed command: `" + existedCommand
@@ -66,7 +66,7 @@ public class NaiveCommandExecutor {
         List<String> output = new ArrayList<>();
         try {
             String[] commandParts = command.split(" ");
-            String commandName = commandParts[0];
+            String commandName = commandParts[0].toLowerCase();
             String[] args = new String[commandParts.length - 1];
             if (args.length > 0) {
                 System.arraycopy(commandParts, 1, args, 0, args.length);

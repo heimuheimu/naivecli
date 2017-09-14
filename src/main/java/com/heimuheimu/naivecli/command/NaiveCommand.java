@@ -34,7 +34,7 @@ import java.util.List;
 public interface NaiveCommand {
 
     /**
-     * 获得命令名称
+     * 获得命令名称，不区分大小写，不能含有空格，不能使用"quit"、"ping"等系统命令名称
      *
      * @return 命令名称
      */

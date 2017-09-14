@@ -167,10 +167,14 @@ public class NaiveCliSession implements Closeable {
                 while (!stopSignal) {
                     String input = textualSocket.readLine();
                     if (input != null) {
+                        input = input.toLowerCase();
                         if (input.equals("quit")) {
                             textualSocket.writeLine("bye bye~");
                             close();
                             break;
+                        } else if (input.equals("ping")) {
+                            textualSocket.writeLine("pong");
+                            lastActiveTime = System.currentTimeMillis();
                         } else {
                             lastActiveTime = System.currentTimeMillis();
                             List<String> outputList = executor.execute(input);
