@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
 import java.util.*;
 
 /**
- * 命令执行器
+ * 命令执行器。
  *
  * @author heimuheimu
  */
@@ -43,6 +43,11 @@ public class NaiveCommandExecutor {
      */
     private final Map<String, NaiveCommand> commandMap;
 
+    /**
+     * 构造一个命令执行器。
+     *
+     * @param commandList 支持的命令列表
+     */
     public NaiveCommandExecutor(Collection<NaiveCommand> commandList) {
         commandMap = new HashMap<>();
         for (NaiveCommand command : commandList) {
@@ -57,7 +62,7 @@ public class NaiveCommandExecutor {
     }
 
     /**
-     * 执行指定命令
+     * 执行指定命令。
      *
      * @param command 命令内容
      * @return 命令执行后的输出

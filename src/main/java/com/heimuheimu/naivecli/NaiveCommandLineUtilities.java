@@ -40,7 +40,7 @@ import java.util.Collection;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * 为 Java 项目提供命令行工具，命令的输入与输出均通过文本形式进行交互
+ * 为 Java 项目提供命令行工具，命令的输入与输出均通过文本形式进行交互。
  *
  * @author heimuheimu
  */
@@ -75,7 +75,7 @@ public class NaiveCommandLineUtilities implements Closeable {
     private CliServerThread cliServerThread;
 
     /**
-     * 构造一个命令行工具
+     * 构造一个命令行工具。
      *
      * @param port 监听的端口
      * @param commandList 命令行工具支持的命令列表
@@ -126,7 +126,7 @@ public class NaiveCommandLineUtilities implements Closeable {
     }
 
     /**
-     * 移除不活跃的 NaiveCliSession
+     * 移除不活跃的 NaiveCliSession。
      */
     public void removeInactiveSessions() {
         for (NaiveCliSession session : currentSessionList) {

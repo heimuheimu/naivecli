@@ -38,7 +38,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * 与命令行工具调用方建立的 Session，通过 Socket 进行通信
+ * 与命令行工具调用方建立的 Session，通过 Socket 进行通信。
  *
  * @author heimuheimu
  */
@@ -79,7 +79,7 @@ public class NaiveCliSession implements Closeable {
     private IoThread ioThread;
 
     /**
-     * 构造一个与命令行工具调用方建立的 Session
+     * 构造一个与命令行工具调用方建立的 Session。
      *
      * @param socket 与调用方建立的 Socket 连接
      */
@@ -88,6 +88,9 @@ public class NaiveCliSession implements Closeable {
         this.executor = naiveCommandExecutor;
     }
 
+    /**
+     * 执行 {@code NaiveCliSession} 初始化操作。
+     */
     public synchronized void init() {
         if (state == BeanStatusEnum.UNINITIALIZED) {
             try {
@@ -131,7 +134,7 @@ public class NaiveCliSession implements Closeable {
     }
 
     /**
-     * 判断当前 Session 是否活跃
+     * 判断当前 Session 是否活跃。
      *
      * @return 是否活跃
      */
@@ -140,7 +143,7 @@ public class NaiveCliSession implements Closeable {
     }
 
     /**
-     * 获得当前 Session 已闲置的秒数
+     * 获得当前 Session 已闲置的秒数。
      *
      * @return 当前 Session 已闲置的秒数
      */

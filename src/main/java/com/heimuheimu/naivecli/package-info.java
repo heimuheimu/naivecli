@@ -22,30 +22,9 @@
  * SOFTWARE.
  */
 
-package com.heimuheimu.naivecli.command;
-
-import java.util.List;
-
 /**
- * 命令行工具支持执行的命令。
+ * 为 Java 项目提供命令行工具，命令的输入与输出均通过文本形式进行交互。
  *
  * @author heimuheimu
  */
-public interface NaiveCommand {
-
-    /**
-     * 获得命令名称，不区分大小写，不能含有空格，不能使用"quit"、"ping"等系统命令名称
-     *
-     * @return 命令名称
-     */
-    String getName();
-
-    /**
-     * 执行该命令
-     *
-     * @param args 命令执行参数
-     * @return 执行返回信息
-     */
-    List<String> execute(String[] args);
-
-}
+package com.heimuheimu.naivecli;

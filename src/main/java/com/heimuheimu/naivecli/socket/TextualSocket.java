@@ -28,7 +28,7 @@ import java.io.*;
 import java.net.Socket;
 
 /**
- * 将字节通信的 Socket 封装为文本形式通信的 Socket
+ * 将字节通信的 Socket 封装为文本形式通信的 Socket。
  *
  * @author heimuheimu
  */
@@ -50,7 +50,7 @@ public class TextualSocket {
     private final BufferedWriter writer;
 
     /**
-     * 构造一个文本形式通信的 Socket 实例
+     * 构造一个文本形式通信的 Socket 实例。
      *
      * @param socket 被封装的  Socket 实例
      */
@@ -65,7 +65,7 @@ public class TextualSocket {
     }
 
     /**
-     * 输出一行文本内容
+     * 输出一行文本内容。
      *
      * @param text 输出的文本内容
      * @throws IOException 如果输出过程中发生错误，则抛出此异常
@@ -77,7 +77,7 @@ public class TextualSocket {
     }
 
     /**
-     * 读取一行文本内容，如果输入流已结束，则返回 {@code null}
+     * 读取一行文本内容，如果输入流已结束，则返回 {@code null}。
      *
      * @return 读取的一行文本内容，如果输入流已结束，则为 {@code null}
      * @throws IOException 如果读取过程中发生错误，则抛出此异常
