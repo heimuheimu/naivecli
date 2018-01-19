@@ -53,6 +53,7 @@ public class TextualSocket {
      * 构造一个文本形式通信的 Socket 实例。
      *
      * @param socket 被封装的  Socket 实例
+     * @throws IOException 如果 TextualSocket 创建过程中发生 IO 错误，将抛出此异常
      */
     public TextualSocket(Socket socket) throws IOException {
         this.socket = socket;

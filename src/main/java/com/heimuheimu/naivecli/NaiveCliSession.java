@@ -82,6 +82,7 @@ public class NaiveCliSession implements Closeable {
      * 构造一个与命令行工具调用方建立的 Session。
      *
      * @param socket 与调用方建立的 Socket 连接
+     * @param naiveCommandExecutor 命令执行器
      */
     public NaiveCliSession(Socket socket, NaiveCommandExecutor naiveCommandExecutor) {
         this.socket = socket;
