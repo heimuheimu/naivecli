@@ -82,9 +82,18 @@ public class NaiveCommandExecutor {
             } else {
                 output.add("`" + commandName + "` is not supported.");
                 output.add("Supported command:");
+                List<String> commandNameList = new ArrayList<>(commandMap.keySet());
+                Collections.sort(commandNameList);
                 int index = 1;
-                for (String supportedCommandName : commandMap.keySet()) {
-                    output.add("    " + (index++) + ". " + supportedCommandName);
+                String indent = getWhiteSpaceString(4);
+                for (String supportedCommandName : commandNameList) {
+                    NaiveCommand supportedCommand = commandMap.get(supportedCommandName);
+                    String argumentDescription = supportedCommand.getArgumentDescription();
+                    if (argumentDescription != null && !argumentDescription.isEmpty()) {
+                        output.add(indent + (index++) + ". " + supportedCommandName + " " + argumentDescription);
+                    } else {
+                        output.add(indent + (index++) + ". " + supportedCommandName);
+                    }
                 }
             }
         } catch (Exception e) {
@@ -94,4 +103,17 @@ public class NaiveCommandExecutor {
         return output;
     }
 
+    /**
+     * 获得指定长度的空格字符串。
+     *
+     * @param length 空格长度
+     * @return 指定长度的空格字符串
+     */
+    private String getWhiteSpaceString(int length) {
+        String result = "";
+        for (int i = 0; i < length; i++) {
+            result += " ";
+        }
+        return result;
+    }
 }

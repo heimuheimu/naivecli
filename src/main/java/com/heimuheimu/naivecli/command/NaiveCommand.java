@@ -41,11 +41,19 @@ public interface NaiveCommand {
     String getName();
 
     /**
-     * 执行该命令
+     * 获得命令的参数说明。
+     *
+     * @return 命令的参数说明
+     */
+    default String getArgumentDescription() {
+        return "";
+    }
+
+    /**
+     * 执行该命令，并返回执行信息。
      *
      * @param args 命令执行参数
      * @return 执行返回信息
      */
     List<String> execute(String[] args);
-
 }
