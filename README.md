@@ -1,5 +1,7 @@
 # NaiveCli: 为 Jar 项目提供基于文本交互的简单命令行工具。
 
+[![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/heimuheimu/naivecli.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/heimuheimu/naivecli/context:java)
+
 ## 使用要求
 * JDK 版本：1.8+ 
 * 依赖类库：
